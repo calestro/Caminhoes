@@ -12,15 +12,17 @@ class JanelaPopUp{
         {
 
           var width  = MediaQuery.of(context).size.width;
+          var height = MediaQuery.of(context).size.height;
+          double multiplySize = 0.4;
 
           return Container(
-            width: width * 0.4,
+            width: width * multiplySize,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: width * 0.4,
+                  width: width * multiplySize,
                   decoration: BoxDecoration(
                       color: Color(0xff101c43),
                       borderRadius: BorderRadius.circular(8.0)
