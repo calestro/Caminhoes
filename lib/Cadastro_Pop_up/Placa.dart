@@ -139,7 +139,7 @@ class _PlacaCadastroState extends State<PlacaCadastro> {
               width: wd * 0.08,
               child: IconButton(
                 icon: Icon(Icons.save, size: wd * 0.03),
-                onPressed: buttonEnable ? (){
+                onPressed: buttonEnable || info.isEditting ? (){
                  firebase.addPlacas(n.Placa.text.toUpperCase(),n.Veiculo.text.toUpperCase(),n.Aparelho.text.toUpperCase(),n.Correia.text.toUpperCase(),n.Km.text.toUpperCase(), n.Cliente.text.toUpperCase());
                  JanelaPopUp().Close();
                 } : null,

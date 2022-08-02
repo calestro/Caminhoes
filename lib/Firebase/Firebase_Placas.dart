@@ -39,12 +39,15 @@ void deletarPlacas(placa) async{
 
 void addPlacas ( Placa, Veiculo, Aparelho, Correia, Km, Cliente) async
 {
+
+
   var arraySearch = [];
   String search ="";
   for (var i = 0; i < Placa.length; i++ ) {
     search = search + Placa.substring(i,i+1);
     arraySearch.add(search);
   }
+
 
   Map<String, dynamic>? map = {
     "Placa":Placa,
