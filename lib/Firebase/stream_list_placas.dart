@@ -89,6 +89,20 @@ class _StreamListPlacaState extends State<StreamListPlaca> {
                         snapshot.data!.docs[index]["Veiculo"],
                           style: TextStyle(color: Colors.white,
                               fontWeight: FontWeight.bold)),
+                      trailing: IconButton(
+                        icon:Icon(Icons.edit),
+                        onPressed:(){ firebase.editingPlaca(
+                            snapshot.data!.docs[index]["Placa"],
+                            snapshot.data!.docs[index]["Veiculo"],
+                            snapshot.data!.docs[index]["Aparelho"],
+                            snapshot.data!.docs[index]["Correia"],
+                            snapshot.data!.docs[index]["KM"],
+                            snapshot.data!.docs[index]["Cliente"],
+                            context);
+                          info.isEditting = true;
+                        }
+                      ),
+
                       onTap: () {
                         var snap = snapshot.data!.docs[index];
                         Map<String,dynamic> click = {

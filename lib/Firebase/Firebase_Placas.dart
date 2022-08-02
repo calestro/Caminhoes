@@ -1,10 +1,16 @@
+import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:refrimaq_placas_cadastrador/Cadastro_Pop_up/Placa.dart';
+import 'package:refrimaq_placas_cadastrador/Components/Janela.dart';
 import 'package:refrimaq_placas_cadastrador/Globals/Globals_TextController.dart';
+import '../Globals/Global_Keys.dart';
 
 
 class FirebasePlacas{
 TextControllers controllers = TextControllers();
-
+JanelaPopUp janela =JanelaPopUp();
+Info info = Info();
 
 streamPlacas (placa) {
 
@@ -50,10 +56,23 @@ void addPlacas ( Placa, Veiculo, Aparelho, Correia, Km, Cliente) async
     "arrayPlaca":arraySearch,
   };
 
-  await FirebaseFirestore.instance
-      .collection("PLACA")
-      .doc(Placa)
-      .set(map);
+    await FirebaseFirestore.instance
+        .collection("PLACA")
+        .doc(Placa)
+        .set(map);
+
+
+}
+
+void editingPlaca(Placa,Veiculo, Aparelho, Correia, Km, Cliente, context){
+  controllers.Placa.text = Placa;
+  controllers.Veiculo.text = Veiculo;
+  controllers.Aparelho.text = Aparelho;
+  controllers.Correia.text = Correia;
+  controllers.Km.text = Km;
+  controllers.Cliente.text = Cliente;
+  janela.Janela(context, PlacaCadastro());
+
 }
 
 
