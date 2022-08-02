@@ -65,6 +65,7 @@ class JanelaPopUp{
     info.entry?.remove();
     info.entry = null;
     n.clear();
+    info.isEditting = false;
   }
 }
 
