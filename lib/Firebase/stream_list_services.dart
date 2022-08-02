@@ -93,14 +93,15 @@ class _StreamListServicesState extends State<StreamListServices> {
                                   subtitle: Text(snapshot.data!.docs[index]["Date"],
                                       textAlign: TextAlign.center,
                                       style: TextStyle(color: Colors.white)),
-                                  onTap: () {
+                                  onTap: !info.isPopUpOpened ? () {
                                     n.Peca.text = snapshot.data!.docs[index]["Peca"];
                                     n.Date.text =snapshot.data!.docs[index]["Date"];
                                     n.Desc.text =snapshot.data!.docs[index]["Desc"];
                                     info.isEditting = true;
                                     info.idServices = snapshot.data!.docs[index].id.toString();
                                     janela.Janela(context, ServiceCadastro());
-                                    },
+                                    info.isPopUpOpened = true;
+                                    } : null,
                                 ),
                               ),
                             ),

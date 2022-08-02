@@ -8,10 +8,15 @@ class Info{
   static final Info _info = Info._internal();
  double? width;
  double? height;
+
  OverlayEntry? entry;
+
  var idPlaca;
- bool isEditting = false;
  var idServices;
+
+ bool isEditting = false;
+ bool isPopUpOpened = false;
+
 
 
 
