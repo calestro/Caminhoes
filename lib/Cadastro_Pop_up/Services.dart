@@ -9,7 +9,7 @@ import 'package:refrimaq_placas_cadastrador/Firebase/Firebase_Services.dart';
 class ServiceCadastro extends StatefulWidget {
   const ServiceCadastro({Key? key}) : super(key: key);
 
-  @override
+  @override""
   State<ServiceCadastro> createState() => _ServiceCadastroState();
 }
 
